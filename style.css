@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    font-size: 62.5%;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #040924;
+    font-size: 1.6rem;
+}
+.alert-error{
+    background-color: #F03E3E;
+    color: white;
+    font-weight: bold;
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 0.8rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    visibility: 0;
+    opacity: 0;
+
+    transform: translateY(-30px);
+    transition: transform .5s;
+}
+.alert-error.open{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.card{
+    max-width: 42.8rem;
+    margin-bottom: 10rem;
+    padding: 4.8rem 6.4rem 6.4rem 6.5rem;
+    background-color: #FFFFFF;
+
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.6rem;
+}
+.card h1{
+    font-size: 3.2rem;
+    color: #0C3440;
+    font-weight: 700;
+    margin-bottom: 3.2rem;
+}
+
+button{
+    background-image: url("./img/arrow.svg");
+    background-repeat: no-repeat;
+    background-position: 19.2rem 50%;
+    border: none;
+
+    margin-top: 4.2rem;
+    width: 100%;
+    padding: 1.6rem 0 1.6rem 0;
+
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.6rem;
+    background-color: #02799D;
+}
+
+.input-wrapper{
+    display: grid;
+    margin-top: 1.6rem;
+}
+
+.input-wrapper input{
+    padding: 1.6rem 0 1.6rem 1.6rem;
+    margin-top: 0.8rem;
+    background: #DCE2E9;
+    border: 1px solid rgba(73, 80, 87, 0.3);
+}
+.input-wrapper input:focus{
+    outline: 2px solid #02799D;
+}
+
+.input-wrapper label{
+    color: #00453A;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+}
+.input-wrapper input::placeholder{
+    color: rgba(73, 80, 87, 0.5);
+}
+
+
+@media (max-width: 350px) {
+    .card{
+        padding: 4.8rem 3rem 6.4rem 3rem;
+    }
+    button{
+        background-position: 16.4rem 50%;
+    }
+}
+
+/* modal */
+.modal-wrapper.open{
+    opacity: 1;
+    visibility: visible;
+}
+.modal-wrapper{
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    inset: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal{
+    position: relative;
+}
+
+.imgClose{
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+.imgClose:hover{
+    transform: scale(1.4);
+}
